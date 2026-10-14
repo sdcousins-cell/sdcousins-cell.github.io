@@ -1,1 +1,6 @@
-<p>Signed in. You can close this page.</p>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tesla sign-in code</title>
+<style>body{font-family:system-ui,sans-serif;text-align:center;padding:2em 1em;background:#f6f6f6}#code{font:bold 2rem monospace;word-break:break-all;background:#fff;border:2px solid #333;border-radius:8px;padding:1em;margin:1em auto;max-width:900px;user-select:all}button{font-size:1.3rem;padding:.6em 1.4em}</style></head>
+<body><h1>Tesla sign-in code</h1><p id="msg">Copy this code and send it back to your bot:</p><div id="code"></div><button id="b">Copy code</button><p id="st"></p>
+<script>var p=new URLSearchParams(location.search),c=p.get('code'),e=p.get('error');
+if(c){document.getElementById('code').textContent=c;}else{document.getElementById('msg').textContent=e?('Error: '+e+' '+(p.get('error_description')||'')):'No code found in this URL.';document.getElementById('code').style.display='none';document.getElementById('b').style.display='none';}
+document.getElementById('b').onclick=function(){navigator.clipboard.writeText(c).then(function(){document.getElementById('st').textContent='Copied!'})};</script></body></html>
